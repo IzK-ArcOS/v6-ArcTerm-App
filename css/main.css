@@ -1,3 +1,49 @@
-window#appTemplate { /* Rename appTemplate to the ID of the app */
-  color: #f0f;
+window#ArcTerm {
+  background-color: #000c;
+  --fg: #ccc;
+  --win-bg: #3a3a3a;
+  --win-border: #555 1px solid;
+  --button-bg: #4a4a4a;
+  --button-hover-bg: #555555;
+  --button-active-bg: #2a2a2a;
+  --button-glass-bg: #fff1;
+  --button-glass-hover-bg: #fff3;
+  --button-glass-active-bg: #0005;
+  --clr-red-fg: #ff7e7e;
+  --clr-green-fg: #82ff80;
+  --clr-yellow-fg: #ffe073;
+  --clr-orange-fg: #ffad32;
+  --clr-blue-fg: #96d3ff;
+  --clr-aqua-fg: #79ffd0;
+  --clr-purple-fg: #d597ff;
+  --clr-gray-fg: #999;
+}
+
+window#ArcTerm:not(.focused) {
+  background-color: #000;
+}
+
+window#ArcTerm>div.body {
+  padding: 5px;
+}
+
+window#ArcTerm>div.titlebar {
+  background-color: transparent !important;
+}
+
+window#ArcTerm>div.body div.terminal-renderer {
+  /* height: 100%; */
+  overflow-y: hidden;
+}
+
+window#ArcTerm>div.body div.terminal-renderer * {
+  word-wrap: break-word;
+  word-break: break-all;
+  white-space: break-spaces;
+  max-width: 100%;
+  box-shadow: none !important;
+}
+
+window#ArcTerm.fullscreen {
+  background-color: #000 !important;
 }
