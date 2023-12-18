@@ -20,6 +20,7 @@
       target,
       [...arcCommands, ...desktopSpecific],
       app,
+      pid,
       (a: ArcTerm) => {
         a.std.clear();
       },
