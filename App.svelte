@@ -1,15 +1,13 @@
 <script lang="ts">
   import { ArcTerm } from "$state/ArcTerm/ts/terminal/main";
-  import { App } from "$types/app";
-  import { onMount } from "svelte";
-  import "./css/main.css";
   import {
     arcCommands,
     desktopSpecific,
   } from "$state/ArcTerm/ts/terminal/store";
   import { focusedPid } from "$ts/stores/apps";
-  import { spawnOverlay } from "$ts/apps/spawn";
-  import { ElementsApp } from "$apps/Elements/ts/app";
+  import { App } from "$types/app";
+  import { onMount } from "svelte";
+  import "./css/main.css";
 
   export let app: App;
   export let pid: number;
@@ -27,8 +25,6 @@
         a.std.clear();
       },
     );
-
-    spawnOverlay(ElementsApp, pid);
   });
 
   function focus() {
