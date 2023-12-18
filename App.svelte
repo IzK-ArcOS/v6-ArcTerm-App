@@ -4,10 +4,12 @@
     arcCommands,
     desktopSpecific,
   } from "$state/ArcTerm/ts/terminal/store";
+  import { createErrorDialog } from "$ts/process/error";
   import { focusedPid } from "$ts/stores/apps";
   import { App } from "$types/app";
   import { onMount } from "svelte";
   import "./css/main.css";
+  import { WarningIcon } from "$ts/images/general";
 
   export let app: App;
   export let pid: number;
@@ -24,6 +26,21 @@
       (a: ArcTerm) => {
         a.std.clear();
       },
+    );
+
+    createErrorDialog(
+      {
+        title: "Delete ArcOS Account",
+        message:
+          "Are you sure you want to delete your ArcOS account? This will delete any and all user data associated with this account. These changes cannot be reverted.",
+        buttons: [
+          { caption: "Proceed", action() {} },
+          { suggested: true, caption: "Back to safety", action() {} },
+        ],
+        image: WarningIcon,
+      },
+      pid,
+      true,
     );
   });
 
