@@ -23,20 +23,20 @@ window#ArcTerm:not(.focused) {
   background-color: #000;
 }
 
-window#ArcTerm>div.body {
+window#ArcTerm > div.body {
   padding: 5px;
 }
 
-window#ArcTerm>div.titlebar {
+window#ArcTerm > div.titlebar {
   background-color: transparent !important;
 }
 
-window#ArcTerm>div.body div.terminal-renderer {
+window#ArcTerm > div.body div.terminal-renderer {
   /* height: 100%; */
   overflow-y: hidden;
 }
 
-window#ArcTerm>div.body div.terminal-renderer * {
+window#ArcTerm > div.body div.terminal-renderer * {
   word-wrap: break-word;
   word-break: break-all;
   white-space: break-spaces;

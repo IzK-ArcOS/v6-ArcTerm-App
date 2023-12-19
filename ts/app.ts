@@ -11,7 +11,7 @@ export const ArcTermApp: App = {
     author: "The ArcOS Team",
     version: ArcOSVersion,
     icon: ArcTermIcon,
-    appGroup: "systemTools"
+    appGroup: "systemTools",
   },
   runtime: Runtime,
   content: AppSvelte,
@@ -25,12 +25,12 @@ export const ArcTermApp: App = {
     maximized: false,
     headless: false,
     fullscreen: false,
-    resizable: true
+    resizable: true,
   },
   controls: {
     minimize: true,
     maximize: true,
-    close: true
+    close: true,
   },
-  glass: true
-}
+  glass: true,
+};
