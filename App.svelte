@@ -8,6 +8,7 @@
   import { App } from "$types/app";
   import { onMount } from "svelte";
   import "./css/main.css";
+  import { arcTermModeIntro } from "$state/ArcTerm/ts/terminal/mode";
 
   export let app: App;
   export let pid: number;
@@ -21,9 +22,7 @@
       [...arcCommands, ...desktopSpecific],
       app,
       pid,
-      (a: ArcTerm) => {
-        a.std.clear();
-      }
+      arcTermModeIntro
     );
   });
 
