@@ -19,6 +19,10 @@ window#ArcTerm {
   --clr-gray-fg: #999;
 }
 
+.noglass window#ArcTerm {
+  background-color: #000;
+}
+
 window#ArcTerm:not(.focused) {
   background-color: #000;
 }
