@@ -1,5 +1,6 @@
 <script lang="ts">
   import { ArcTerm } from "$state/ArcTerm/ts/terminal/main";
+  import { arcTermModeIntro } from "$state/ArcTerm/ts/terminal/mode";
   import {
     arcCommands,
     desktopSpecific,
@@ -8,7 +9,6 @@
   import { App } from "$types/app";
   import { onMount } from "svelte";
   import "./css/main.css";
-  import { arcTermModeIntro } from "$state/ArcTerm/ts/terminal/mode";
 
   export let app: App;
   export let pid: number;
