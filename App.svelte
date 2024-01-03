@@ -41,10 +41,8 @@
 
     target.scrollTo(0, target.scrollHeight);
   }
-
-  setInterval(focus, 10);
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="terminal-renderer" bind:this={target} on:click={focus} />
+<div class="terminal-renderer" bind:this={target} />
