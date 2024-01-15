@@ -5,7 +5,6 @@
     arcCommands,
     desktopSpecific,
   } from "$state/ArcTerm/ts/terminal/store";
-  import { focusedPid } from "$ts/stores/apps";
   import { App } from "$types/app";
   import { onMount } from "svelte";
   import "./css/main.css";
@@ -13,11 +12,10 @@
   export let app: App;
   export let pid: number;
 
-  let arcTerm: ArcTerm;
   let target: HTMLDivElement;
 
   onMount(() => {
-    arcTerm = new ArcTerm(
+    new ArcTerm(
       target,
       [...arcCommands, ...desktopSpecific],
       app,
@@ -25,22 +23,6 @@
       arcTermModeIntro
     );
   });
-
-  function focus() {
-    if (
-      !arcTerm ||
-      !arcTerm.input ||
-      !arcTerm.input.current ||
-      $focusedPid != pid
-    )
-      return;
-
-    arcTerm.input.current.focus();
-
-    if (!target) return;
-
-    target.scrollTo(0, target.scrollHeight);
-  }
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
