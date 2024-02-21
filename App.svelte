@@ -1,10 +1,7 @@
 <script lang="ts">
   import { ArcTerm } from "$state/ArcTerm/ts/terminal/main";
   import { arcTermModeIntro } from "$state/ArcTerm/ts/terminal/mode";
-  import {
-    arcCommands,
-    desktopSpecific,
-  } from "$state/ArcTerm/ts/terminal/store";
+  import { arcCommands, desktopSpecific } from "$state/ArcTerm/ts/terminal/store";
   import { App } from "$types/app";
   import { onMount } from "svelte";
   import "./css/main.css";
@@ -15,13 +12,7 @@
   let target: HTMLDivElement;
 
   onMount(() => {
-    new ArcTerm(
-      target,
-      [...arcCommands, ...desktopSpecific],
-      app,
-      pid,
-      arcTermModeIntro
-    );
+    new ArcTerm(target, [...arcCommands, ...desktopSpecific], app, pid, arcTermModeIntro);
   });
 </script>
 
